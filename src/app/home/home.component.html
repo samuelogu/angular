@@ -1,0 +1,15 @@
+<div class="col-md-6 mx-auto">
+  <h3 class="mt-2">Todo App</h3>
+  <form action="" (ngSubmit)="addTodo()">
+    <label for="todo">Title</label>
+    <input type="text" name="input" [(ngModel)]="input" class="form-control mb-2" id="todo" placeholder="Enter todo">
+    <button type="submit" class="btn btn-primary">Add</button>
+  </form>
+  <hr>
+  <ul class="list-group">
+    <li class="list-group-item" [ngClass]="{'done': todo.isComplete}" *ngFor="let todo of todos">
+      {{todo.title}}
+      <input type="checkbox" [(ngModel)]="todo.isComplete" class="float-right" id="">
+    </li>
+  </ul>
+</div>
